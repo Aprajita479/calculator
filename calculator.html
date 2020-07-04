@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script language="Javascript" type="text/javascript">
+    function backspace(){
+     var preval=forms.answer.value;
+     forms.answer.value=preval.substr(0,preval.length-1);
+    }
+    function ac(){
+        forms.answer.value="0";
+    }
+    function changeSign(input){
+        if(forms.answer.value.substring(0,1)=="-")
+            forms.answer.value=forms.answer.value.substring(1,forms.answer.value.length)
+        else
+            forms.answer.value="-"+forms.answer.value
+        }
+</script>
+<style>
+    h1{
+       font-family:cursive;
+        font-size: 50px;
+    }
+    #clear{
+        width:285px;
+        color: white;
+        background-color: green;
+        font-family: cursive;
+        font-size: 18px;
+    }
+#clear:hover{
+        background-color:greenyellow;
+        color: black;
+        box-shadow:black 2px 2px 2px;
+        font-size:17px; 
+}
+    #cross{
+        color: red;
+        position: relative;
+        left: 95%;
+        top: 100%;
+        transform: translate(-98%, -170%);
+    }
+    #cross:hover{
+      background-color:floralwhite;
+        box-shadow:black 2px 2px 2px;  
+    }
+    .formstyle{
+        width: 290px;
+        height: auto;
+        margin: auto;
+        border-radius: 10px;
+        border:none;
+    }
+    input{
+        width: 50px;
+        margin: 2px;;
+        height: 30px;
+        border: 1px solid #bdc3c7;
+        border-radius: 10px;
+        background-color: #bdc3c7;
+        font-family: cursive;
+        font-size: 15px;
+    }
+    input:hover{
+         background-color:aliceblue;
+        box-shadow:black 2px 2px 2px;
+    }
+    #ans{
+        width: 280px;
+        background-color:khaki;
+    }
+    body{
+        height: auto;
+        width: auto;
+        background-image: linear-gradient(90deg,#ecf0f1,#3498db,#1abc9c);
+    }
+    #Delete{
+        color:white;
+        background-color: red;
+    }
+    #Exit{
+        color: wheat;
+        background-color: red;
+    }
+    .trig{
+        color: antiquewhite;
+        background-color: black;
+    }
+    .trig:hover{
+         background-color:snow;
+        box-shadow:black 2px 2px 2px;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+   <center><h1>CALCULATOR</h1></center>
+    <div class="formstyle">
+        <form name="forms">
+            <input type="text" name="answer" id="ans">
+            <i class="fa fa-times" aria-hidden="true" id="cross"></i>
+            <br>
+            <input type="button" value=" sin " onclick="forms.answer.value=Math.sin(forms.answer.value)" class="trig">
+            <input type="button" value=" cos " onclick="forms.answer.value=Math.cos(forms.answer.value)" class="trig">
+            <input type="button" value=" tan " onclick="forms.answer.value=Math.tan(forms.answer.value)" class="trig">
+            <input type="button" value="  ln  " onclick="forms.answer.value=Math.E" class="trig"> 
+            <input type="button" value=" log " onclick="forms.answer.value=Math.log(forms.answer.value)" class="trig"><br>
+            <input type="button" value=" ^2 " onclick="forms.answer.value=Math.pow(forms.answer.value,2)" class="trig">
+            <input type="button" value=" &radic; " onclick="forms.answer.value=Math.sqrt(forms.answer.value,1/2)" class="trig">
+            <input type="button" value=" |x| " onclick="forms.answer.value=Math.abs(forms.answer.value)" class="trig">
+            <input type="button" value=" ( " onclick="forms.answer.value +='('" class="trig">
+            <input type="button" value=" ) " onclick="forms.answer.value +=')'" class="trig"><br>
+            <input type="button" value=" ^ " onclick="forms.answer.value=Math.pow(forms.answer.value,forms.answer.value)" class="trig">
+            <input type="button" value=" pi " onclick="forms.answer.value =Math.PI" class="trig">
+            <input type="button" value=" Exp " onclick="forms.answer.value=Math.exp(forms.answer.value)" class="trig">
+            <input type="button" value=" MOD " onclick="forms.answer.value+='%'" class="trig">
+            <input type="button" value=" M+ " onclick="forms.answer.value +='M+ '" class="trig">
+            <input type="button" value=" 7 " onclick="forms.answer.value +='7'">
+            <input type="button" value=" 8 " onclick="forms.answer.value +='8'">
+            <input type="button" value=" 9 " onclick="forms.answer.value +='9'">
+            <input type="button" value=" Del " onclick="backspace()" id="Delete">
+            <input type="button" value=" Exit " onclick="ac()" id="Exit"><br>
+            <input type="button" value=" 4 " onclick="forms.answer.value +='4'">
+            <input type="button" value=" 5 " onclick="forms.answer.value +='5'">
+            <input type="button" value=" 6 " onclick="forms.answer.value +='6'">
+            <input type="button" value=" - " onclick="forms.answer.value +='-'">
+            <input type="button" value=" + " onclick="forms.answer.value +='+'"><br>
+            <input type="button" value=" 1 " onclick="forms.answer.value +='1'">
+            <input type="button" value=" 2 " onclick="forms.answer.value +='2'">
+            <input type="button" value=" 3 " onclick="forms.answer.value +='3'">
+            <input type="button" value=" * " onclick="forms.answer.value +='*'">
+            <input type="button" value=" / " onclick="forms.answer.value +='/'"><br>
+            <input type="button" value=" 0 " onclick="forms.answer.value +='0'">
+            <input type="button" value=" 00" onclick="forms.answer.value +='00'">
+            <input type="button" value=" . " onclick="forms.answer.value +='.'">
+            <input type="button" value=" = " onclick="forms.answer.value=eval(forms.answer.value)">
+            <input type="button" value=" (-) " onclick="changeSign(forms.answer.value)">
+            <br>
+            <input type="reset" value="Clear" onclick="forms.answer.value=' '" id="clear">
+            </form>
+    </div>
+</body>
+</html>
